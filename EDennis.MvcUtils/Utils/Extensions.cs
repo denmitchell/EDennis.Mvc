@@ -81,7 +81,6 @@ namespace EDennis.MvcUtils
             where TAppUserRolesDbContext : AppUserRolesContextBase
         {
             builder.Services.TryAddSingleton<RolesCache>();
-            builder.Services.TryAddScoped<IClaimsTransformation,AppUserRolesClaimsTransformation<TAppUserRolesDbContext>>();
             builder.Services.TryAddScoped<MvcAuthenticationStateProvider>();
             builder.Services.Configure<SecurityOptions>(builder.Configuration.GetSection(securityConfigKey));
 
